@@ -2,8 +2,13 @@
 
 import enum
 from ctypes import c_void_p, cdll
-from distutils.ccompiler import new_compiler
-from distutils.unixccompiler import UnixCCompiler
+try:
+    from distutils.ccompiler import new_compiler
+    from distutils.unixccompiler import UnixCCompiler
+except ImportError:
+    from setuptools._distutils.ccompiler import new_compiler
+    from setuptools._distutils.unixccompiler import UnixCCompiler
+
 from os import path
 from platform import system
 from tempfile import TemporaryDirectory
