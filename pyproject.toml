@@ -1,6 +1,27 @@
 [build-system]
-requires = [
-    "setuptools>=43.0.0",
-    "wheel>=0.36.2",
-]
+requires = ["setuptools>=60.0.0", "wheel>=0.36.2"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree_sitter"
+version = "0.20.2"
+license = { text = "MIT" }
+authors = [{ name = "Max Brunsfeld", email = "maxbrunsfeld@gmail.com" }]
+maintainers = [{ name = "Max Brunsfeld", email = "maxbrunsfeld@gmail.com" }]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Text Processing :: Linguistic",
+]
+description = "Python bindings for the Tree-Sitter parsing library"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.3"
+dependencies = ["setuptools>=60.0.0; python_version >= \"3.12\""]
+
+[project.urls]
+Source = "https://github.com/tree-sitter/py-tree-sitter"
+
+[tool.setuptools]
+platforms = ["any"]
+packages = ["tree_sitter"]
+package-data = { "tree_sitter" = ["py.typed", "*.pyi"] }

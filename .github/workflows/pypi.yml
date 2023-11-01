@@ -48,6 +48,8 @@ jobs:
         env:
           CIBW_TEST_COMMAND: python -m unittest discover -s {package}/tests
           CIBW_ARCHS_MACOS: x86_64 arm64
+          CIBW_ARCHS_LINUX: auto aarch64
+          CIBW_ARCHS_WINDOWS: auto ARM64
 
       # Make wheels downloadable from GitHub UI and from the pypi step
       - uses: actions/upload-artifact@v3
